@@ -33,11 +33,12 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  left: 50%;
-  bottom: 50%;
-  border-left: 3px solid #113;
-  border-bottom: 3px solid #113;
+  left: 48%;
+  bottom: 48%;
+  border-left: 3px solid #153;
+  border-bottom: 3px solid #153;
   z-index: 2;
+  pointer-events: none;
 }
 
 .board .row:first-child .point:before {
@@ -51,17 +52,19 @@ body {
 .board .row:first-child .point:last-child:before {
   height: 3px;
   width: 3px;
-  background-color: #113;
+  background-color: #153;
 }
 
-.board .row .point.white:after, .board .row .point.black:after {
+.board .row .point.white:after,
+.board .row .point.black:after,
+.board .row .point.empty.star:after {
   content: '';
   display: block;
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 100%;
-  z-index: 10;
+  z-index: 3;
 }
 
 .board .row .point.white:after {
@@ -70,6 +73,14 @@ body {
 
 .board .row .point.black:after {
   background-color: #000;
+}
+
+.board .row .point.empty.star:after {
+  background-color: #153;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 .tree, .controls {
